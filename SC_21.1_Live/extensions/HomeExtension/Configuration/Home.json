@@ -1,0 +1,37 @@
+{
+	"type": "object"
+
+,	"properties": {
+		"home.sliderCarouselImages": {
+			"group": "layout",
+            "type": "array",
+            "title": "Slider Carousel images",
+            "docRef": "bridgehead_4666978268",
+            "description": "Slider Carousel images Urls",
+            "items": {
+                "type":"object",
+                "properties":{
+                     "url":{
+                              "type": "string",
+                              "title": "Url",
+                              "description":"Slider Carousel images Urls"
+                            },
+                    "dataTouchPoints":{
+                        "type":"string",
+                        "title":"DATA-TOUCHPOINT",
+                        "description":" A touchpoint is a point of contact and/or engagement between a business and a customer."
+                         
+                    },
+                    "dataHashTag":{
+                        "type":"string",
+                        "title":"DATA-HASHTAG",
+                        "description":" A touchpoint is a point of contact and/or engagement between a business and a customer."
+                         
+                    }
+            }
+            },
+            "default": true
+		}
+
+	}
+}
