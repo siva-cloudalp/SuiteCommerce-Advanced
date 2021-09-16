@@ -1,0 +1,18 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ],
+        "templates": [
+            "Templates/*"
+        ],
+        "images": [
+            "Images/*"
+        ],
+        "configuration": [
+            "Configuration/*.json"
+        ]
+    },"overrides":{
+        "Advanced/ProductDetails/JavaScript/ProductDetails.Base.View.ts":"JavaScript/ProductDetails.Base.View.ts"	
+       }
+}
