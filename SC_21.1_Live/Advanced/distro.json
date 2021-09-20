@@ -22,6 +22,7 @@
             "Source2"
         ]
     },
+
     "modules": [
         "../Commons/Address",
         "../Commons/AjaxRequestsKiller",
@@ -86,6 +87,10 @@
         "../extensions/HomeExtension",
         "../extensions/HeaderExtension",
         "../extensions/FooterExtension",
+        "../extensions/LocationQuntatity",
+        "../extensions/contactUs",
+       
+        
         "Account",
         "Balance",
         "BaseSassStyleguide",
@@ -231,6 +236,7 @@
                     ],
                     "exportFile": "shopping.js"
                 },
+                
                 {
                     "names": [
                         "SC.MyAccount.Starter.js"
@@ -241,7 +247,10 @@
                     "names": [
                         "SC.Checkout.Starter.js"
                     ],
-                    "exportFile": "checkout.js"
+                    "exportFile": "checkout.js",
+                    "dependencies": [
+                        "Contact.View"
+                    ]
                 }
             ],
             "paths": {
@@ -460,6 +469,11 @@
                                 "global-views-message",
                                 "global-views-pagination"
                             ]
+                        },{
+                            "module": "contactUs",
+                            "include": [
+                                "Contact-Us"
+                            ]
                         },
                         {
                             "module": "GlobalViewsOnline",
@@ -468,6 +482,8 @@
                                 "global-views-breadcrumb"
                             ]
                         },
+                         
+                       
                         {
                             "module": "Header",
                             "include": [
@@ -488,6 +504,7 @@
                         "ItemRelations",
                         "Transaction.Line.Views",
                         "Merchandising",
+                      
                         {
                             "module": "ProductList",
                             "include": [
@@ -524,7 +541,8 @@
                         "PickupInStore",
                         "Location.SCA",
                         "Notifications",
-                        "Core"
+                        "Core",
+                        "LocationQuntatity"
                     ]
                 },
                 {
@@ -757,7 +775,13 @@
                             "include": [
                                 "order-history-list-tracking-number"
                             ]
+                        }, {
+                            "module": "contactUs",
+                            "include": [
+                                "contact-us"
+                            ]
                         },
+                       
                         "OrderWizard",
                         "OrderWizard.Module.Address",
                         "OrderWizard.Module.Register",
