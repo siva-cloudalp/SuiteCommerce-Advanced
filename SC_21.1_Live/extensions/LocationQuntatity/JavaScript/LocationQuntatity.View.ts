@@ -35,16 +35,17 @@ export = BackboneView.extend({
 
         let inventoryData = quantityavailable_detail;
         var matrixData = [];
+     
 
 
-        // if (quantityavailable_detail.length>0) {
-        //     inventoryData = quantityavailable_detail;
+        if (quantityavailable_detail.length>0) {
+            inventoryData = quantityavailable_detail;
 
-        // };
+        };
 
         $.each(item_model.get('matrixchilditems_detail'), function (key, val) {
             matrixData.push(val.quantityonhand_detail);
-
+        
             // console.log(val.quantityonhand_detail.locations.length >0);
         });
 
@@ -58,24 +59,23 @@ export = BackboneView.extend({
         for (var i = 0; i < matrixData.length; i++) {
             matrix = matrixData[i];
             matrixLocationId = matrix.locations;
-            for (var j = 0; j < staticData.length; j++) {
+            for (var j = 0; j < staticData.length; j++) {   //matrix.locationname
                 var stati = staticData[j]
-                matrixLocationId.map(obj =>  obj.internalid == stati.internalid ?  matrix.locationname = stati.name : 1 );
-
+                matrixLocationId.map(obj =>{  obj.internalid == stati.internalid ?   matrix.locationname = [stati.name] : 1   
+                
+                
+                });
             }
 
         }
-
-
-
 
         for (var k = 0; k < inventoryData.length; k++) {
             var inventoryId = inventoryData[k];
             for (var o = 0; o < staticData.length; o++) {
                 var Static = staticData[o];
-                console.log(`${inventoryId.internalid}--${k}<--->${Static.internalid}--${o}`);
+                // console.log(`${inventoryId.internalid}--${k}<--->${Static.internalid}--${o}`);
                 if (inventoryId.internalid == Static.internalid) {
-                    inventoryData[k].locationname = Static.name
+                    inventoryData[k].name = Static.name
 
                 }
             }
@@ -84,14 +84,9 @@ export = BackboneView.extend({
 
 
         var location_quntatity = matrixData.length > 0 ? matrixData : inventoryData;
-        // console.log(location_quntatity);
-
-        // console.log(matrixData);
-
-
-
         console.log(location_quntatity);
-        //   console.log(staticData);
+        
+ 
 
 
 
@@ -101,8 +96,10 @@ export = BackboneView.extend({
             // matrixData: matrixData ,
             z: location_quntatity,
             show: quantityavailable_detail,
-            // staticData: staticData
+            matrixData:matrixData,
+            inventoryData:inventoryData
 
+             
 
         }
     }
